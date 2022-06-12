@@ -22,9 +22,9 @@ mongoose.connection.on("disconnected",()=>{
 
 app.use(express.json());
 
-app.use("api/auth",authRoute);
-app.use("api/donuts",donutsRoute);
-app.use("api/users",usersRoute);
+app.use("/api/auth",authRoute);
+app.use("/api/donuts",donutsRoute);
+app.use("/api/users",usersRoute);
 
 mongoose.connection.on("connected",()=>{
     console.log("connected mongodb")
