@@ -7,6 +7,7 @@ import usersRoute from "./routes/users.js"
 import homeRoute from "./routes/home.js"
 import cookieParser from "cookie-parser";
 import bodyparser from "body-parser"
+import session from "express-session"
 
 
 const app = express();
@@ -30,6 +31,11 @@ try {
 mongoose.connection.on("disconnected",()=>{
     console.log("Disconnected mongodb")
 })
+
+app.use(session({
+  secret: 'this is session',
+  resave: true,
+  saveUninitialized: false}));
 
 app.set("view engine","ejs");
 app.use(express.static("public"))
