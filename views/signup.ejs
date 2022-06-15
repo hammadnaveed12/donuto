@@ -1,0 +1,26 @@
+<%- include("header.ejs") %>
+<%- include("navbar.ejs") %>
+
+<div class="signup-form" >
+
+    <h2 > Register </h2>
+
+    <form class="signupform" action="/signup/register" method="post">
+      <div class="inputBox">
+        <input type="text" name="email" autocomplete="off" required>
+        <label>Email</label>
+      </div>
+      <div class="inputBox">
+        <input type="password" name="password" autocomplete="off" required>
+        <label>Password</label>
+      </div>
+      <div class="inputBox">
+        <input type="password" name="cpassword" autocomplete="off" required>
+        <label>Confirm Password</label>
+      </div>
+      <input type="submit" id="submit" name="register" value="Register">
+    </form>
+   
+
+</div>
+

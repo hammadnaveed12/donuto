@@ -4,22 +4,6 @@ import mongoose from "mongoose";
 
 const router = express.Router();
 
-// Create
-router.post("/", async (req,res)=>{
-
-    const newDonut = new Donut(req.body)
-    
-    try{
-
-        const savedDonut = await newDonut.save();
-        res.status(200).json(savedDonut);
-        
-
-    }catch(err){
-res.status(500).json(err)
-    }
-});
-
 // updtae
 router.put("/:id", async (req,res)=>{
     

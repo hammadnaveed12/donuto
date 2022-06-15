@@ -10,21 +10,21 @@ router.get("/",(req,res)=>{
 })
 
 
-router.post("/login",async (req,res,next)=>{
-    try{
-        const salt = bcrypt.genSaltSync(10);
-        const hash = bcrypt.hashSync(req.body.password, salt);
-const newUser = new Users({
+// router.post("/login",async (req,res,next)=>{
+//     try{
+//         const salt = bcrypt.genSaltSync(10);
+//         const hash = bcrypt.hashSync(req.body.password, salt);
+// const newUser = new Users({
    
-    email:req.body.email,
-    password:hash,
-})
-await newUser.save()
-res.status(201).send("User has been created")
-    }
-    catch(err){
-next(err)
-    }
-});
+//     email:req.body.email,
+//     password:hash,
+// })
+// await newUser.save()
+// res.status(201).send("User has been created")
+//     }
+//     catch(err){
+// next(err)
+//     }
+// });
 
 export default router

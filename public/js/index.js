@@ -33,6 +33,8 @@ $(document).ready(function(){
     $(".close").click(function(){
         $(".login-form").css('transform','scale(0)');
     });
+
+    
     
     
     

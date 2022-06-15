@@ -163,7 +163,7 @@ section {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   background-color: #7D1156;
-  transform: scale(0);
+  
 }
 .login-form h1 {
   margin: 0 0 30px;
@@ -220,4 +220,128 @@ section {
   position: absolute;
   bottom: 90%;
   left: 90%;
+}
+
+.signup-form{
+  position: absolute;
+  top:35%;
+  left: 40%;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #7D1156;
+ 
+}
+.signup-form h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.signup-form .inputBox {
+  position: relative;
+}
+.signup-form .inputBox input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.signup-form .inputBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.signup-form .inputBox input:focus ~ label,
+.signup-form .inputBox input:valid ~ label {
+  top: -18px;
+  left: 0;
+  color: white;
+  font-size: 12px;
+}
+
+.signup-form input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #7D1156;
+  background: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.admin-form{
+  position: absolute;
+  top:35%;
+  left: 40%;
+  padding: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #7D1156;
+ 
+}
+.admin-form h1 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.admin-form .inputBox {
+  position: relative;
+}
+.admin-form .inputBox input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.admin-form .inputBox label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 1px;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.admin-form .inputBox input:focus ~ label,
+.admin-form .inputBox input:valid ~ label {
+  top: -18px;
+  left: 0;
+  color: white;
+  font-size: 12px;
+}
+
+.admin-form input[type="submit"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #7D1156;
+  background: #fff;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }

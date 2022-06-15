@@ -1,0 +1,115 @@
+
+
+<%- include("header.ejs") %>
+ 
+<%- include("navbar.ejs") %>
+
+
+<button type="button" class="btn btn-primary bg-purple white" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Donut</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/adminlogin/dashboard/add" method="post">
+          <div class="mb-3">
+            <label for="donutname"  class="col-form-label">Name:</label>
+            <input type="text" name="donutname"class="form-control" id="donutname">
+          </div>
+          <div class="mb-3">
+          <label for="formFile" class="form-label" style="color: white">Donut Image</label>
+          <input class="form-control" type="file" name="file">
+</div>
+          <div class="mb-3">
+            <label for="price"  class="col-form-label">Price:</label>
+            <input type="number" name="price" class="form-control" id="price">
+          </div>
+          <div class="mb-3">
+            <label for="desc"  class="col-form-label">Description:</label>
+            <input type="text" name="desc" class="form-control" id="desc">
+          </div>
+          
+          <input type="submit" class="btn btn-primary" id="submit" name="add" value="Add Product">
+          
+        </form>
+      </div>
+    
+
+  
+
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody> 
+      <%if (Donut.length >0){ %>
+          <% Donut.forEach(function(row){ %>
+          <tr>
+            <td><%= row.donutname %></td>
+            <td><%= row.price %></td>
+            <td><a type="button" class="btn btn-primary bg-purple white" data-bs-toggle="modal" data-bs-target="#ex" >Edit</a>
+              <div class="modal fade" id="ex" tabindex="-1" aria-labelledby="ex" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form action="/adminlogin/dashboard/update/<%= row._id %>" method="post">
+                        <div class="mb-3">
+                          <label for="donutname"  class="col-form-label">Name:</label>
+                          <input type="text" name="donutname"class="form-control" id="donutname">
+                        </div>
+                        <div class="mb-3">
+                          <label for="price"  class="col-form-label">Price:</label>
+                          <input type="number" name="price" class="form-control" id="price">
+                        </div>
+                        <div class="mb-3">
+                          <label for="desc"  class="col-form-label">Description:</label>
+                          <input type="text" name="desc" class="form-control" id="desc">
+                        </div>
+                        
+                        <input type="submit" class="btn btn-primary" id="submit" name="add" value="Update">
+                        
+                      </form>
+                    </div>
+                
+              
+                  </div>
+                </div>
+              </div>
+
+              <a type="button" class="btn btn-danger" href="/adminlogin/dashboard/delete/<%= row._id%>">Delete</a>
+
+             
+              </td>
+  
+          </tr>
+          <% })}else{ %>
+            <tr>
+                <td colspan="6">No Record Found</td>
+                
+              </tr>
+            <% } %>
+    
+   
+  </tbody>
+</table>
+
+<!-- -->
+
+
+  
+<%- include("footer.ejs") %>

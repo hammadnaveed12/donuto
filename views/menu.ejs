@@ -1,0 +1,84 @@
+
+<%- include("header.ejs") %>
+<%- include("navbar.ejs") %>
+
+<!-- <h2 class="menuhead">OUR MENU</h2> 
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="menu images/choc-iced-sprinkles.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Choc-iced-sprinkles</h5>
+        <p class="card-text">$30</p>
+        <button class="btn bg-purple white">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="menu images/choc-strawberry-filled.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">choc-strawberry-filled</h5>
+        <p class="card-text">$40</p>
+        <button class="btn bg-purple white">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="menu images/cinnamon-ring.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cinnamon ring</h5>
+        <p class="card-text">$40</p>
+        <button class="btn bg-purple white">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="menu images/milk-tart.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Milk-tart</h5>
+        <p class="card-text">$20</p>
+        <button class="btn bg-purple white">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="row pl-4 pr-4">
+  <% Donut.forEach((product) => { %>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-index-box">
+    <div class="single-product d-flex flex-column h-100">
+     
+        
+         
+      
+      <div class="product-info">
+        
+          <h6 class="mt-2 mb-2"><%= product.donutname %></h6>
+        <div class="price">Rs<%= product.price %></div>
+      </div>
+      <% if(product.available) {%>
+      <a
+        href="/add-to-cart/<%=product._id%>"
+        class="btn btn-block btn-secondary button-style mt-auto mb-2"
+      >
+        Add to Shopping Cart
+      </a>
+      <% } else { %>
+      <a
+        
+        class="btn btn-block bg-purple white button-style-danger mt-2 mb-2"
+      >
+        Add to cart
+      </a>
+      <%} %>
+    </div>
+  </div>
+  <% }) %>
+</div>
+
+  
+<%- include("footer.ejs") %>
+      

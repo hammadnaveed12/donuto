@@ -1,0 +1,21 @@
+<%- include("header.ejs") %>
+<%- include("navbar.ejs") %>
+
+<div class="login-form" >
+
+    <h2 > LOGIN </h2>
+
+    <form class="loginnform" action="/login/log" method="post">
+      <div class="inputBox">
+        <input type="text" name="email" autocomplete="off" required>
+        <label>Email</label>
+      </div>
+      <div class="inputBox">
+        <input type="password" name="password" autocomplete="off" required>
+        <label>Password</label>
+      </div>
+      <input type="submit" id="submit" name="login" value="Login">
+    </form>
+    
+
+</div>
